@@ -36,10 +36,20 @@
 	<indexLatch>105</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -48,6 +58,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -72,10 +89,20 @@
 	<indexLatch>97</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -84,6 +111,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -108,10 +142,20 @@
 	<indexLatch>145</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -120,6 +164,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -177,10 +228,20 @@
 	<indexLatch>105</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -189,6 +250,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -213,10 +281,20 @@
 	<indexLatch>97</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -225,6 +303,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -249,10 +334,20 @@
 	<indexLatch>145</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -261,6 +356,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -285,10 +387,10 @@
 	<x>74.99999999999996</x>
 	<y>-59.99999999999995</y>
 	<z>210.00000000000003</z>
-	<rotw>0.07925844132879417</rotw>
-	<rotx>-0.7026507663684223</rotx>
-	<roty>0.07925844132879321</roty>
-	<rotz>0.7026507663684214</rotz>
+	<rotw>0.0792584413287909</rotw>
+	<rotx>-0.7026507663684514</rotx>
+	<roty>0.07925844132879614</roty>
+	<rotz>0.7026507663684505</rotz>
 </baseToZframe>
 
 </leg>
@@ -318,10 +420,20 @@
 	<indexLatch>105</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -330,6 +442,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -354,10 +473,20 @@
 	<indexLatch>97</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -366,6 +495,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -390,10 +526,20 @@
 	<indexLatch>145</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -402,6 +548,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -426,10 +579,10 @@
 	<x>74.99999999999996</x>
 	<y>60.00000000000005</y>
 	<z>210.00000000000003</z>
-	<rotw>0.07919711968286643</rotw>
-	<rotx>0.7026576806909184</rotx>
-	<roty>0.07919711968286697</roty>
-	<rotz>-0.7026576806909183</rotz>
+	<rotw>0.07919711968284812</rotw>
+	<rotx>0.7026576806910788</rotx>
+	<roty>0.07919711968288527</roty>
+	<rotz>-0.7026576806910787</rotz>
 </baseToZframe>
 
 </leg>
@@ -459,10 +612,20 @@
 	<indexLatch>105</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -471,6 +634,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -495,10 +665,20 @@
 	<indexLatch>97</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -507,6 +687,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -531,10 +718,20 @@
 	<indexLatch>145</indexLatch>
 	<isStopOnLatch>false</isStopOnLatch>
 	<homingTPS>10000000</homingTPS>
-	<electroMechanicalSize>standardMicro</electroMechanicalSize>
-	<electroMechanicalType>hobbyServo</electroMechanicalType>
-	<shaftSize>standardMicro1</shaftSize>
-	<shaftType>hobbyServoHorn</shaftType>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>hv6214mg</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standard4</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
 	<mass>0.01</mass>
 	<centerOfMassFromCentroid>	<x>0.0</x>
 	<y>0.0</y>
@@ -543,6 +740,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 	<DHParameters>
 		<Delta>0.0</Delta>
@@ -568,7 +772,7 @@
 	<y>-39.999999999999964</y>
 	<z>159.99999999999997</z>
 	<rotw>0.7051320916686236</rotw>
-	<rotx>-0.05280845859359923</rotx>
+	<rotx>-0.05280845859359922</rotx>
 	<roty>0.7051320916686236</roty>
 	<rotz>0.05280845859359914</rotz>
 </baseToZframe>
@@ -602,6 +806,13 @@
 	<rotx>0.0</rotx>
 	<roty>0.0</roty>
 	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
 
 </mobilebase>
 
