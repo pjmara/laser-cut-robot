@@ -82,12 +82,17 @@ return new ICadGenerator(){
 		
 		
 		if(linkIndex==0){
-			add(csg,servoReference,sourceLimb.getRootListener())
-			add(csg,horn,sourceLimb.getRootListener())
+			add(csg,servoReference.clone(),sourceLimb.getRootListener())
+			add(csg,servoReference,dh.getListener())
 		}else{
-			add(csg,moveDHValues(servoReference,dh),dh.getListener())
-			add(	csg,horn,dh.getListener())
+			if(linkIndex<dhLinks.size()-1)
+				add(csg,servoReference,dh.getListener())
+			else{
+				// load the end of limb
+			}
+			
 		}
+		add(csg,moveDHValues(horn,dh),dh.getListener())
 		
 		return csg;
 	}
