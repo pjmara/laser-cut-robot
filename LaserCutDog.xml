@@ -387,10 +387,10 @@
 	<x>199.99999999999994</x>
 	<y>-119.99999999999993</y>
 	<z>310.00000000000006</z>
-	<rotw>0.07925844132879102</rotw>
-	<rotx>-0.7026507663684239</rotx>
-	<roty>0.07925844132879147</roty>
-	<rotz>0.7026507663684234</rotz>
+	<rotw>0.07925844132877373</rotw>
+	<rotx>-0.7026507663685755</rotx>
+	<roty>0.0792584413288084</roty>
+	<rotz>0.702650766368575</rotz>
 </baseToZframe>
 
 </leg>
@@ -579,10 +579,10 @@
 	<x>199.99999999999994</x>
 	<y>120.00000000000007</y>
 	<z>310.00000000000006</z>
-	<rotw>0.0791971196828566</rotw>
-	<rotx>0.7026576806909195</rotx>
-	<roty>0.07919711968285717</roty>
-	<rotz>-0.7026576806909194</rotz>
+	<rotw>0.07919711968283831</rotw>
+	<rotx>0.7026576806910798</rotx>
+	<roty>0.07919711968287546</roty>
+	<rotz>-0.7026576806910797</rotz>
 </baseToZframe>
 
 </leg>
@@ -774,10 +774,202 @@
 	<rotw>0.7051320916686236</rotw>
 	<rotx>-0.05280845859359916</rotx>
 	<roty>0.7051320916686236</roty>
-	<rotz>0.05280845859359907</rotz>
+	<rotz>0.05280845859359908</rotz>
 </baseToZframe>
 
 </leg>
+<appendage>
+
+<name>Neck</name>
+	<cadEngine>
+		<git>https://gist.github.com/bcb4760a449190206170.git</git>
+		<file>ThreeDPrintCad.groovy</file>
+	</cadEngine>
+	<kinematics>
+		<git>https://gist.github.com/bcb4760a449190206170.git</git>
+		<file>DefaultDhSolver.groovy</file>
+	</kinematics>
+<link>
+	<name>basePan</name>
+	<deviceName>dyio</deviceName>
+	<type>servo-rotory</type>
+	<index>2</index>
+	<scale>0.33</scale>
+	<upperLimit>255.0</upperLimit>
+	<lowerLimit>0.0</lowerLimit>
+	<upperVelocity>1.0E8</upperVelocity>
+	<lowerVelocity>-1.0E8</lowerVelocity>
+	<staticOffset>128.43283582089552</staticOffset>
+	<isLatch>true</isLatch>
+	<indexLatch>235</indexLatch>
+	<isStopOnLatch>false</isStopOnLatch>
+	<homingTPS>10000000</homingTPS>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>standardMicro</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standardMicro1</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
+	<mass>0.01</mass>
+	<centerOfMassFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
+
+	<DHParameters>
+		<Delta>0.0</Delta>
+		<Theta>0.0</Theta>
+		<Radius>60.0</Radius>
+		<Alpha>-90.0</Alpha>
+	</DHParameters>
+
+</link>
+<link>
+	<name>baseTilt</name>
+	<deviceName>dyio</deviceName>
+	<type>servo-rotory</type>
+	<index>11</index>
+	<scale>0.33</scale>
+	<upperLimit>255.0</upperLimit>
+	<lowerLimit>0.0</lowerLimit>
+	<upperVelocity>1.0E8</upperVelocity>
+	<lowerVelocity>-1.0E8</lowerVelocity>
+	<staticOffset>128.0</staticOffset>
+	<isLatch>true</isLatch>
+	<indexLatch>128</indexLatch>
+	<isStopOnLatch>false</isStopOnLatch>
+	<homingTPS>10000000</homingTPS>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>standardMicro</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standardMicro1</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
+	<mass>0.01</mass>
+	<centerOfMassFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
+
+	<DHParameters>
+		<Delta>0.0</Delta>
+		<Theta>-90.0</Theta>
+		<Radius>93.0</Radius>
+		<Alpha>0.0</Alpha>
+	</DHParameters>
+
+</link>
+<link>
+	<name>elbow</name>
+	<deviceName>dyio</deviceName>
+	<type>servo-rotory</type>
+	<index>10</index>
+	<scale>0.33</scale>
+	<upperLimit>255.0</upperLimit>
+	<lowerLimit>0.0</lowerLimit>
+	<upperVelocity>1.0E8</upperVelocity>
+	<lowerVelocity>-1.0E8</lowerVelocity>
+	<staticOffset>121.0</staticOffset>
+	<isLatch>true</isLatch>
+	<indexLatch>121</indexLatch>
+	<isStopOnLatch>false</isStopOnLatch>
+	<homingTPS>10000000</homingTPS>
+	<vitamins>
+	<vitamin>
+	<name>electroMechanical</name>
+	<type>hobbyServo</type>
+	<id>standardMicro</id>
+	</vitamin>
+	<vitamin>
+	<name>shaft</name>
+	<type>hobbyServoHorn</type>
+	<id>standardMicro1</id>
+	</vitamin>
+
+</vitamins>
+	<passive>false</passive>
+	<mass>0.01</mass>
+	<centerOfMassFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></centerOfMassFromCentroid>
+	<imuFromCentroid>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz></imuFromCentroid>
+
+	<DHParameters>
+		<Delta>0.0</Delta>
+		<Theta>90.0</Theta>
+		<Radius>131.0</Radius>
+		<Alpha>0.0</Alpha>
+	</DHParameters>
+
+</link>
+
+<ZframeToRAS
+>	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>0.0</rotx>
+	<roty>0.0</roty>
+	<rotz>0.0</rotz>
+</ZframeToRAS>
+
+<baseToZframe>
+	<x>199.99999999999994</x>
+	<y>7.105427357601002E-14</y>
+	<z>320.00000000000006</z>
+	<rotw>1.0</rotw>
+	<rotx>-2.7755575615628907E-17</rotx>
+	<roty>-2.775557561562889E-17</roty>
+	<rotz>8.326672684688674E-17</rotz>
+</baseToZframe>
+
+</appendage>
 
 <ZframeToRAS>
 	<x>0.0</x>
