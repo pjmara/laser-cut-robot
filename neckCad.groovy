@@ -31,6 +31,7 @@ return new ICadGenerator(){
 	double nutDimeMeasurment = nutMeasurments.get("width")
 	double nutThickMeasurment = nutMeasurments.get("height")
 	private TransformNR offset =BowlerStudio3dEngine.getOffsetforvisualization().inverse();
+	ArrayList<CSG> headParts =null
 	@Override 
 	public ArrayList<CSG> generateCad(DHParameterKinematics d, int linkIndex) {
 		ArrayList<CSG> allCad=defaultCadGen.generateCad(d,linkIndex);
@@ -45,16 +46,23 @@ return new ICadGenerator(){
 			eyeCenter.setMM(100)
 			leyeDiam.setMM(60)
 			reyeDiam.setMM(60)
-			ArrayList<CSG> headParts = (ArrayList<CSG> )ScriptingEngine.gitScriptRun("https://gist.github.com/e67b5f75f23c134af5d5054106e3ec40.git", "AnimatronicHead.groovy" ,  null )
+			if(headParts==null)
+				headParts = (ArrayList<CSG> )ScriptingEngine.gitScriptRun("https://gist.github.com/e67b5f75f23c134af5d5054106e3ec40.git", "AnimatronicHead.groovy" ,  null )
 			TransformNR initialState = offset.times(d.getRobotToFiducialTransform())
 			RotationNR rot = initialState.getRotation();
 			for(int i=0;i<headParts.size()-1;i++){
 				CSG part = headParts.get(i)
 				Color color= part.getColor()
-				part=part	.rotx(-90)
+				part=	part	
+						.movez(-jawHeight.getMM())
+						.rotx(-90)
 						.rotz(-Math.toDegrees(rot.getRotationElevation()))
+						
 				part.setColor(color)
 				defaultCadGen.add(allCad ,part, dh.getListener() )
+				for(String p:part .getParameters()){
+					CSGDatabase.addParameterListener(p,this);
+				}
 			}
 		}
 		return allCad;
@@ -65,5 +73,16 @@ return new ICadGenerator(){
 		//If you want you can add things here
 		//allCad.add(myCSG);
 		return allCad;
+	}
+	/**
+	 * This is a listener for a parameter changing
+	 * @param name
+	 * @param p
+	 */
+	 
+	public void parameterChanged(String name, Parameter p){
+		//new RuntimeException().printStackTrace(System.out);
+		//println "All Parts was set to null"
+		headParts=null
 	}
 };
