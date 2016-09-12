@@ -88,7 +88,7 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 	public void parameterChanged(String name, Parameter p){
 		//new RuntimeException().printStackTrace(System.out);
 		println "headParts was set to null from "+name
-		new Exception().printStackTrace(System.out)
+		//new Exception().printStackTrace(System.out)
 		headParts=null
 	}
 };

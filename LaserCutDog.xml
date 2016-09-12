@@ -15,7 +15,7 @@
 <name>DefaultLeg</name>
 	<cadEngine>
 		<git>https://github.com/madhephaestus/laser-cut-robot.git</git>
-		<file>laserCutCad.groovy</file>
+		<file>feetCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/375b47a8e071608688a1.git</git>
@@ -207,7 +207,7 @@
 <name>DefaultLeg2</name>
 	<cadEngine>
 		<git>https://github.com/madhephaestus/laser-cut-robot.git</git>
-		<file>laserCutCad.groovy</file>
+		<file>feetCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/375b47a8e071608688a1.git</git>
@@ -387,10 +387,10 @@
 	<x>199.99999999999994</x>
 	<y>-119.99999999999993</y>
 	<z>310.00000000000006</z>
-	<rotw>0.07925844132740624</rotw>
-	<rotx>-0.7026507663805472</rotx>
-	<roty>0.07925844133015873</roty>
-	<rotz>0.7026507663805467</rotz>
+	<rotw>0.07925844121924666</rotw>
+	<rotx>-0.7026507673274438</rotx>
+	<roty>0.07925844143696797</roty>
+	<rotz>0.7026507673274432</rotz>
 </baseToZframe>
 
 </leg>
@@ -399,7 +399,7 @@
 <name>DefaultLeg3</name>
 	<cadEngine>
 		<git>https://github.com/madhephaestus/laser-cut-robot.git</git>
-		<file>laserCutCad.groovy</file>
+		<file>feetCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/375b47a8e071608688a1.git</git>
@@ -579,10 +579,10 @@
 	<x>199.99999999999994</x>
 	<y>120.00000000000007</y>
 	<z>310.00000000000006</z>
-	<rotw>0.07919711968138775</rotw>
-	<rotx>0.7026576807037894</rotx>
-	<roty>0.07919711968430779</roty>
-	<rotz>-0.7026576807037892</rotz>
+	<rotw>0.07919711956647758</rotw>
+	<rotx>0.7026576817105932</rotx>
+	<roty>0.07919711979778563</roty>
+	<rotz>-0.7026576817105931</rotz>
 </baseToZframe>
 
 </leg>
@@ -591,7 +591,7 @@
 <name>DefaultLeg4</name>
 	<cadEngine>
 		<git>https://github.com/madhephaestus/laser-cut-robot.git</git>
-		<file>laserCutCad.groovy</file>
+		<file>feetCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/375b47a8e071608688a1.git</git>
