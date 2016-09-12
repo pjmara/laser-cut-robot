@@ -33,6 +33,7 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 	double nutThickMeasurment = nutMeasurments.get("height")
 	private TransformNR offset =BowlerStudio3dEngine.getOffsetforvisualization().inverse();
 	ArrayList<CSG> headParts =null
+	CSG cutsheet=null;
 	@Override 
 	public ArrayList<CSG> generateCad(DHParameterKinematics d, int linkIndex) {
 		ArrayList<CSG> allCad=defaultCadGen.generateCad(d,linkIndex);
@@ -49,7 +50,7 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 			reyeDiam.setMM(60)
 			if(headParts==null)
 				headParts = (ArrayList<CSG> )ScriptingEngine.gitScriptRun("https://gist.github.com/e67b5f75f23c134af5d5054106e3ec40.git", "AnimatronicHead.groovy" ,  null )
-	
+			
 			for(int i=0;i<headParts.size()-1;i++){
 				CSG part = headParts.get(i)
 				
@@ -58,6 +59,10 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 				defaultCadGen.add(allCad ,part, dh.getListener() )
 				
 			}
+			cutsheet = headParts.get(headParts.size()-1)
+			headParts.get(0).setManufactuing({incoming ->
+				return cutsheet
+			})
 			CSGDatabase.clear()
 			for(CSG c:allCad){
 				for(String p:c .getParameters()){
@@ -73,13 +78,22 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 		RotationNR rot = initialState.getRotation();
 		Color color= part.getColor()
 		PrepForManufacturing mfg =part.getManufactuing()
-		
+		CSG startingPoint = part;
 		return part	
-		.movez(-jawHeight.getMM())
-		.rotx(-90)
-		.rotz(-Math.toDegrees(rot.getRotationElevation()))
-		.setColor(color)
-		.setManufactuing(mfg)
+			.movez(-jawHeight.getMM())
+			.rotx(-90)
+			.rotz(-Math.toDegrees(rot.getRotationElevation()))
+			.setColor(color)
+			.setManufactuing({incoming ->
+				println "Prepping part"
+				try{
+					return mfg.prep(startingPoint)
+				}catch (Exception ex){
+					ex.printStackTrace()
+					return startingPoint
+				}
+			})
+		
 	}
 	@Override 
 	public ArrayList<CSG> generateBody(MobileBase b ) {
