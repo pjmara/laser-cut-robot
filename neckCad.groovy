@@ -61,7 +61,11 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 						
 				part.setColor(color)
 				defaultCadGen.add(allCad ,part, dh.getListener() )
-				for(String p:part .getParameters()){
+				
+			}
+			CSGDatabase.parameterListeners.clear()
+			for(CSG c:allCad){
+				for(String p:c .getParameters()){
 					CSGDatabase.addParameterListener(p,this);
 				}
 			}
@@ -83,7 +87,7 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 	 
 	public void parameterChanged(String name, Parameter p){
 		//new RuntimeException().printStackTrace(System.out);
-		//println "All Parts was set to null"
+		println "headParts was set to null from "+name
 		headParts=null
 	}
 };
