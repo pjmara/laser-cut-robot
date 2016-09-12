@@ -4,6 +4,8 @@ import org.apache.commons.io.IOUtils;
 import com.neuronrobotics.bowlerstudio.vitamins.*;
 import eu.mihosoft.vrl.v3d.parametrics.*;
 import javafx.scene.paint.Color;
+import com.neuronrobotics.bowlerstudio.threed.BowlerStudio3dEngine;
+
 //First we load teh default cad generator script 
 ICadGenerator defaultCadGen=(ICadGenerator) ScriptingEngine
 	                    .gitScriptRun(
@@ -28,6 +30,7 @@ return new ICadGenerator(){
 	double boltDimeMeasurment = boltMeasurments.get("outerDiameter")
 	double nutDimeMeasurment = nutMeasurments.get("width")
 	double nutThickMeasurment = nutMeasurments.get("height")
+	private TransformNR offset =BowlerStudio3dEngine.getOffsetforvisualization().inverse();
 	@Override 
 	public ArrayList<CSG> generateCad(DHParameterKinematics d, int linkIndex) {
 		ArrayList<CSG> allCad=defaultCadGen.generateCad(d,linkIndex);
@@ -43,11 +46,13 @@ return new ICadGenerator(){
 			leyeDiam.setMM(60)
 			reyeDiam.setMM(60)
 			ArrayList<CSG> headParts = (ArrayList<CSG> )ScriptingEngine.gitScriptRun("https://gist.github.com/e67b5f75f23c134af5d5054106e3ec40.git", "AnimatronicHead.groovy" ,  null )
+			TransformNR initialState = offset.times(d.getRobotToFiducialTransform())
+			RotationNR rot = initialState.getRotation();
 			for(int i=0;i<headParts.size()-1;i++){
 				CSG part = headParts.get(i)
 				Color color= part.getColor()
 				part=part	.rotx(-90)
-						.rotz(-45)
+						.rotz(-Math.toDegrees(rot.getRotationElevation()))
 				part.setColor(color)
 				defaultCadGen.add(allCad ,part, dh.getListener() )
 			}
