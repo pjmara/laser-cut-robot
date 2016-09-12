@@ -126,16 +126,7 @@ return new ICadGenerator(){
 		add(csg,moveDHValues(horn,dh),dh.getListener())
 
 		if(neck ==sourceLimb ){
-			println "Found neck limb" 
-			ArrayList<CSG> headParts = (ArrayList<CSG> )ScriptingEngine.gitScriptRun("https://gist.github.com/e67b5f75f23c134af5d5054106e3ec40.git", "AnimatronicHead.groovy" ,  null )
-			for(int i=0;i<headParts.size()-1;i++){
-				CSG part = headParts.get(i)
-				Color color= part.getColor()
-				part=part	.rotx(-90)
-						.rotz(-45)
-				part.setColor(color)
-				add(csg ,part, dh.getListener() )
-			}
+			
 		}
 		
 		
