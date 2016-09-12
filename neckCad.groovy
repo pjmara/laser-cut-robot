@@ -49,17 +49,12 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 			reyeDiam.setMM(60)
 			if(headParts==null)
 				headParts = (ArrayList<CSG> )ScriptingEngine.gitScriptRun("https://gist.github.com/e67b5f75f23c134af5d5054106e3ec40.git", "AnimatronicHead.groovy" ,  null )
-			TransformNR initialState = offset.times(d.getRobotToFiducialTransform())
-			RotationNR rot = initialState.getRotation();
+	
 			for(int i=0;i<headParts.size()-1;i++){
 				CSG part = headParts.get(i)
-				Color color= part.getColor()
-				part=	part	
-						.movez(-jawHeight.getMM())
-						.rotx(-90)
-						.rotz(-Math.toDegrees(rot.getRotationElevation()))
-						
-				part.setColor(color)
+				
+				part=	modify(part)							
+				
 				defaultCadGen.add(allCad ,part, dh.getListener() )
 				
 			}
@@ -71,6 +66,20 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 			}
 		}
 		return allCad;
+	}
+
+	CSG modify(CSG part,DHParameterKinematics d){
+		TransformNR initialState = offset.times(d.getRobotToFiducialTransform())
+		RotationNR rot = initialState.getRotation();
+		Color color= part.getColor()
+		PrepForManufacturing mfg =part.getManufactuing()
+		
+		return part	
+		.movez(-jawHeight.getMM())
+		.rotx(-90)
+		.rotz(-Math.toDegrees(rot.getRotationElevation()))
+		.setColor(color)
+		.setManufactuing(mfg)
 	}
 	@Override 
 	public ArrayList<CSG> generateBody(MobileBase b ) {
@@ -86,9 +95,6 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 	 */
 	 
 	public void parameterChanged(String name, Parameter p){
-		//new RuntimeException().printStackTrace(System.out);
-		println "headParts was set to null from "+name
-		//new Exception().printStackTrace(System.out)
 		headParts=null
 	}
 };
