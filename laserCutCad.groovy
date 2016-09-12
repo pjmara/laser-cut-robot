@@ -2,11 +2,28 @@ import com.neuronrobotics.bowlerstudio.creature.ICadGenerator;
 import com.neuronrobotics.bowlerstudio.creature.CreatureLab;
 import org.apache.commons.io.IOUtils;
 import com.neuronrobotics.bowlerstudio.vitamins.*;
+import eu.mihosoft.vrl.v3d.parametrics.*;
+import com.neuronrobotics.bowlerstudio.vitamins.Vitamins;
+import javafx.scene.paint.Color;
 
 return new ICadGenerator(){
 	HashMap<String , HashMap<String,ArrayList<CSG>>> map =  new HashMap<>();
 	HashMap<String,ArrayList<CSG>> bodyMap =  new HashMap<>();
+	LengthParameter thickness 		= new LengthParameter("Material Thickness",3.15,[10,1])
+	LengthParameter headDiameter 		= new LengthParameter("Head Dimeter",100,[200,50])
+	LengthParameter snoutLen 		= new LengthParameter("Snout Length",63,[200,50])
+	LengthParameter jawHeight 		= new LengthParameter("Jaw Height",32,[200,10])
+	LengthParameter eyeCenter 		= new LengthParameter("Eye Center Distance",headDiameter.getMM()/2,[headDiameter.getMM(),headDiameter.getMM()/2])
+	StringParameter servoSizeParam 			= new StringParameter("hobbyServo Default","towerProMG91",Vitamins.listVitaminSizes("hobbyServo"))
+	StringParameter boltSizeParam 			= new StringParameter("Bolt Size","M3",Vitamins.listVitaminSizes("capScrew"))
 
+	HashMap<String, Object>  boltMeasurments = Vitamins.getConfiguration( "capScrew",boltSizeParam.getStrValue())
+	HashMap<String, Object>  nutMeasurments = Vitamins.getConfiguration( "nut",boltSizeParam.getStrValue())
+	//println boltMeasurments.toString() +" and "+nutMeasurments.toString()
+	double boltDimeMeasurment = boltMeasurments.get("outerDiameter")
+	double nutDimeMeasurment = nutMeasurments.get("width")
+	double nutThickMeasurment = nutMeasurments.get("height")
+	DHParameterKinematics neck=null;
 	/**
 	 * Gets the all dh chains.
 	 *
@@ -36,15 +53,27 @@ return new ICadGenerator(){
 				csg.setManipulator(base.getRootListener());
 			return bodyMap.get(legStr)
 		}
+		println "Generating body"
 		ArrayList<CSG> cutouts=new ArrayList<>();
 		ArrayList<CSG> attach=new ArrayList<>();
 		
 		def bodyParts = []as ArrayList<CSG>
+		
+		def appendages = base.getAppendages()
+		for(DHParameterKinematics l:appendages){
+			if(l.getScriptingName().contains("Neck")){
+				neck = l;		
+				println "Neck found"
+			}
+		}
+		
+		
 		bodyMap.put(legStr,bodyParts)
 		return bodyParts;
 	}
 	@Override 
 	public ArrayList<CSG> generateCad(DHParameterKinematics sourceLimb, int linkIndex) {
+		
 		String legStr = sourceLimb.getXml()
 		LinkConfiguration conf = sourceLimb.getLinkConfiguration(linkIndex);
 
@@ -73,7 +102,7 @@ return new ICadGenerator(){
 		
 		// creating the servo
 		CSG servoReference=   Vitamins.get(conf.getElectroMechanicalType(),conf.getElectroMechanicalSize())
-		.transformed(new Transform().rotZ(-90))
+		.transformed(new Transform().rotZ(90))
 		
 		double servoTop = servoReference.getMaxZ()
 		CSG horn = Vitamins.get(conf.getShaftType(),conf.getShaftSize())	
@@ -95,6 +124,20 @@ return new ICadGenerator(){
 			
 		}
 		add(csg,moveDHValues(horn,dh),dh.getListener())
+
+		if(neck ==sourceLimb ){
+			println "Found neck limb" 
+			ArrayList<CSG> headParts = (ArrayList<CSG> )ScriptingEngine.gitScriptRun("https://gist.github.com/e67b5f75f23c134af5d5054106e3ec40.git", "AnimatronicHead.groovy" ,  null )
+			for(int i=0;i<headParts.size()-1;i++){
+				CSG part = headParts.get(i)
+				Color color= part.getColor()
+				part=part	.rotx(-90)
+						.rotz(-45)
+				part.setColor(color)
+				add(csg ,part, dh.getListener() )
+			}
+		}
+		
 		
 		return csg;
 	}
