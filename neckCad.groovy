@@ -53,7 +53,7 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 			for(int i=0;i<headParts.size()-1;i++){
 				CSG part = headParts.get(i)
 				
-				part=	modify(part)							
+				part=	modify(part,d)							
 				
 				defaultCadGen.add(allCad ,part, dh.getListener() )
 				
