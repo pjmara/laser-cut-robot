@@ -63,7 +63,7 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 				defaultCadGen.add(allCad ,part, dh.getListener() )
 				
 			}
-			CSGDatabase.parameterListeners.clear()
+			CSGDatabase.clear()
 			for(CSG c:allCad){
 				for(String p:c .getParameters()){
 					CSGDatabase.addParameterListener(p,this);
@@ -88,6 +88,7 @@ class HeadOnNeck implements ICadGenerator, IParameterChanged{
 	public void parameterChanged(String name, Parameter p){
 		//new RuntimeException().printStackTrace(System.out);
 		println "headParts was set to null from "+name
+		new Exception().printStackTrace(System.out)
 		headParts=null
 	}
 };
