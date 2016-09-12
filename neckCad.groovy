@@ -6,14 +6,15 @@ import eu.mihosoft.vrl.v3d.parametrics.*;
 import javafx.scene.paint.Color;
 import com.neuronrobotics.bowlerstudio.threed.BowlerStudio3dEngine;
 
-//First we load teh default cad generator script 
-ICadGenerator defaultCadGen=(ICadGenerator) ScriptingEngine
+
+class HeadOnNeck implements ICadGenerator, IParameterChanged{
+	//First we load teh default cad generator script 
+	ICadGenerator defaultCadGen=(ICadGenerator) ScriptingEngine
 	                    .gitScriptRun(
                                 "https://github.com/madhephaestus/laser-cut-robot.git", // git location of the library
 	                              "laserCutCad.groovy" , // file to load
 	                              null
                         )
-return new ICadGenerator(){
 	LengthParameter thickness 		= new LengthParameter("Material Thickness",3.15,[10,1])
 	LengthParameter headDiameter 		= new LengthParameter("Head Dimeter",100,[200,50])
 	LengthParameter snoutLen 		= new LengthParameter("Snout Length",63,[200,50])
@@ -86,3 +87,5 @@ return new ICadGenerator(){
 		headParts=null
 	}
 };
+
+return new HeadOnNeck()
