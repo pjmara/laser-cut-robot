@@ -387,10 +387,10 @@
 	<x>199.99999999999994</x>
 	<y>-119.99999999999993</y>
 	<z>310.00000000000006</z>
-	<rotw>0.07925844132877373</rotw>
-	<rotx>-0.7026507663685755</rotx>
-	<roty>0.0792584413288084</roty>
-	<rotz>0.702650766368575</rotz>
+	<rotw>0.07925844132740624</rotw>
+	<rotx>-0.7026507663805472</rotx>
+	<roty>0.07925844133015873</roty>
+	<rotz>0.7026507663805467</rotz>
 </baseToZframe>
 
 </leg>
@@ -579,10 +579,10 @@
 	<x>199.99999999999994</x>
 	<y>120.00000000000007</y>
 	<z>310.00000000000006</z>
-	<rotw>0.07919711968283831</rotw>
-	<rotx>0.7026576806910798</rotx>
-	<roty>0.07919711968287546</roty>
-	<rotz>-0.7026576806910797</rotz>
+	<rotw>0.07919711968138775</rotw>
+	<rotx>0.7026576807037894</rotx>
+	<roty>0.07919711968430779</roty>
+	<rotz>-0.7026576807037892</rotz>
 </baseToZframe>
 
 </leg>
@@ -783,7 +783,7 @@
 <name>Neck</name>
 	<cadEngine>
 		<git>https://github.com/madhephaestus/laser-cut-robot.git</git>
-		<file>laserCutCad.groovy</file>
+		<file>neckCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/bcb4760a449190206170.git</git>
@@ -963,8 +963,8 @@
 	<x>199.99999999999994</x>
 	<y>7.105427357601002E-14</y>
 	<z>320.00000000000006</z>
-	<rotw>0.9165320473828991</rotw>
-	<rotx>-0.004508831992306026</rotx>
+	<rotw>0.9165320473828992</rotw>
+	<rotx>-0.004508831992306025</rotx>
 	<roty>-0.39991042370541113</roty>
 	<rotz>0.004508831992305967</rotz>
 </baseToZframe>
