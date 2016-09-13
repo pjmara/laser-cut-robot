@@ -5,6 +5,8 @@ import com.neuronrobotics.bowlerstudio.vitamins.*;
 import eu.mihosoft.vrl.v3d.parametrics.*;
 import com.neuronrobotics.bowlerstudio.vitamins.Vitamins;
 import javafx.scene.paint.Color;
+import eu.mihosoft.vrl.v3d.Transform;
+import com.neuronrobotics.bowlerstudio.physics.TransformFactory;
 
 return new ICadGenerator(){
 	HashMap<String , HashMap<String,ArrayList<CSG>>> map =  new HashMap<>();
@@ -57,16 +59,45 @@ return new ICadGenerator(){
 		ArrayList<CSG> cutouts=new ArrayList<>();
 		ArrayList<CSG> attach=new ArrayList<>();
 		
-		def bodyParts = []as ArrayList<CSG>
-		
-		def appendages = base.getAppendages()
-		for(DHParameterKinematics l:appendages){
-			if(l.getScriptingName().contains("Neck")){
-				neck = l;		
-				println "Neck found"
+		ArrayList<CSG>  bodyParts = new ArrayList<CSG>()
+		double bodyHeight = 0;
+		ArrayList<CSG> attachmentParts = new ArrayList<CSG>()
+		for(DHParameterKinematics l:base.getLegs()){
+			TransformNR position = l.getRobotToFiducialTransform();
+			Transform csgTrans = TransformFactory.nrToCSG(position)
+			for(CSG attachment:	generateCad(l,0)){
+				CSG movedCorner = attachment
+					.transformed(csgTrans)// this moves the part to its placement where it will be in the final model
+				attachmentParts.add(movedCorner)
+				if(movedCorner.getMaxZ()>bodyHeight){
+					bodyHeight=movedCorner.getMaxZ()
+				}
 			}
 		}
 		
+		CSG bodyBlob = attachmentParts
+						.get(0)
+						.union(attachmentParts)
+		CSG bodyExtrude = bodyBlob
+						.movez(bodyHeight+thickness.getMM())
+						.union(bodyBlob)
+						.hull()
+		//add(bodyParts,bodyExtrude,base.getRootListener())
+		CSG bodyCube = new Cube(	(-bodyExtrude.getMinX()+bodyExtrude.getMaxX())*2,// X dimention
+								 (-bodyExtrude.getMinY()+bodyExtrude.getMaxY())*2,// Y dimention
+								thickness.getMM()//  Z dimention
+							).toCSG()// this converts from the geometry to an object we can work with
+							.movez(bodyHeight-thickness.getMM())// recess the body plate to overlap with the connection interface from the limbs
+		//add(bodyParts,bodyCube,base.getRootListener())					
+		
+		CSG bodyPlate=bodyCube	
+					.intersect(bodyExtrude)
+		bodyPlate.setManufactuing(new PrepForManufacturing() {
+					public CSG prep(CSG arg0) {
+						return arg0.toZMin();
+					}
+				});
+		add(bodyParts,bodyPlate,base.getRootListener())
 		
 		bodyMap.put(legStr,bodyParts)
 		return bodyParts;
