@@ -11,7 +11,7 @@ class Feet implements ICadGenerator, IParameterChanged{
 	//First we load teh default cad generator script 
 	ICadGenerator defaultCadGen=(ICadGenerator) ScriptingEngine
 	                    .gitScriptRun(
-                                "https://github.com/madhephaestus/laser-cut-robot.git", // git location of the library
+                                "https://github.com/pjmara/laser-cut-robot.git", // git location of the library
 	                              "laserCutCad.groovy" , // file to load
 	                              null
                         )
