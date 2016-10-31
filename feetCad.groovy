@@ -38,11 +38,15 @@ class Feet implements ICadGenerator, IParameterChanged{
 		ArrayList<CSG> allCad=defaultCadGen.generateCad(d,linkIndex);
 		ArrayList<DHLink> dhLinks=d.getChain().getLinks();
 		DHLink dh = dhLinks.get(linkIndex)
+		
 		//If you want you can add things here
 		//allCad.add(myCSG);
 		if(linkIndex ==dhLinks.size()-1){
 			println "Found foot limb" 
 			CSG foot =new Cube(10,10, 10).toCSG() // a one line Cylinder
+			CSG scubadive = new Cylinder (20,20,thickness.getMM(), (int) 30).toCSG()
+
+			defaultCadGen.add(allCad(moveDHvalues(scubadive,dh),dh.getListener()))
 			
 			defaultCadGen.add(allCad,foot,dh.getListener())
 		}
