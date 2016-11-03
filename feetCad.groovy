@@ -38,7 +38,7 @@ class Feet implements ICadGenerator, IParameterChanged{
 		ArrayList<CSG> allCad=defaultCadGen.generateCad(d,linkIndex);
 		ArrayList<DHLink> dhLinks=d.getChain().getLinks();
 		DHLink dh = dhLinks.get(linkIndex)
-		LinkConfiguration conf = sourceLimb.getLinkConfiguration(linkIndex);
+		LinkConfiguration conf = d.getLinkConfiguration(linkIndex);
 		HashMap<String, Object> shaftmap = Vitamins.getConfiguration(conf.getShaftType(),conf.getShaftSize())
 		double hornOffset = 	shaftmap.get("hornThickness")	
 		
@@ -47,7 +47,10 @@ class Feet implements ICadGenerator, IParameterChanged{
 		.transformed(new Transform().rotZ(90))
 		
 		double servoTop = servoReference.getMaxZ()
-		CSG horn = Vitamins.get(conf.getShaftType(),conf.getShaftSize())	
+		CSG horn = Vitamins.get(conf.getShaftType(),conf.getShaftSize()).hull()
+
+		defaultCadGen.moveDHValues(horn,dh)
+			defaultCadGen.add(allCad,horn,dh.getListener())
 		
 		//If you want you can add things here
 		//allCad.add(myCSG);
