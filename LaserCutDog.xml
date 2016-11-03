@@ -40,7 +40,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -93,7 +93,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -232,7 +232,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -285,7 +285,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -338,7 +338,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -424,7 +424,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -477,7 +477,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -530,7 +530,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -616,7 +616,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -669,7 +669,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
@@ -722,7 +722,7 @@
 	<vitamin>
 	<name>electroMechanical</name>
 	<type>hobbyServo</type>
-	<id>hv6214mg</id>
+	<id>towerProMG91</id>
 	</vitamin>
 	<vitamin>
 	<name>shaft</name>
