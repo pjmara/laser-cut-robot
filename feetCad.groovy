@@ -48,7 +48,7 @@ class Feet implements ICadGenerator, IParameterChanged{
 		
 		double servoTop = servoReference.getMaxZ()
 		CSG horn = Vitamins.get(conf.getShaftType(),conf.getShaftSize()).hull()
-
+		
 		defaultCadGen.moveDHValues(horn,dh)
 			defaultCadGen.add(allCad,horn,dh.getListener())
 		
@@ -63,6 +63,7 @@ class Feet implements ICadGenerator, IParameterChanged{
 		CSG scubadive = new Cube (50,dh.getR(),thickness.getMM()* 4).toCSG().toYMin().toZMin()
 
 			scubadive = defaultCadGen.moveDHValues(scubadive,dh)
+			scubadive = scubadive.difference(horn)
 			defaultCadGen.add(allCad,scubadive,dh.getListener())
 		return allCad;
 	}
