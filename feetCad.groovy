@@ -49,8 +49,8 @@ class Feet implements ICadGenerator, IParameterChanged{
 		double servoTop = servoReference.getMaxZ()
 		CSG horn = Vitamins.get(conf.getShaftType(),conf.getShaftSize()).hull()
 		
-		defaultCadGen.moveDHValues(horn,dh)
-			defaultCadGen.add(allCad,horn,dh.getListener())
+		//defaultCadGen.moveDHValues(horn,dh)
+			//defaultCadGen.add(allCad,horn,dh.getListener())
 		
 		//If you want you can add things here
 		//allCad.add(myCSG);
