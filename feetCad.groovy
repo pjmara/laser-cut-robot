@@ -53,6 +53,8 @@ class Feet implements ICadGenerator, IParameterChanged{
 		{
 		 horncutout = horncutout.union(horn.movez(hornOffset* i))
 		}
+
+		//CSG connector = new Cube (
 		
 		//defaultCadGen.moveDHValues(horn,dh)
 			//defaultCadGen.add(allCad,horn,dh.getListener())
@@ -61,11 +63,11 @@ class Feet implements ICadGenerator, IParameterChanged{
 		//allCad.add(myCSG);
 		if(linkIndex ==dhLinks.size()-1){
 			println "Found foot limb" 
-			CSG foot =new Cube(40,60, thickness.getMM()).toCSG() // a one line Cylinder
+			CSG foot =new Cube(10,10, thickness.getMM()).toCSG() // a one line Cylinder
 			
 			defaultCadGen.add(allCad,foot,dh.getListener())
 		}
-		CSG scubadive = new Cube (50,dh.getR(),thickness.getMM()* 4).toCSG().toYMin()
+		CSG scubadive = new Cube (20,dh.getR(),thickness.getMM()* 4).toCSG().toYMin()
 
 			scubadive = defaultCadGen.moveDHValues(scubadive,dh)
 			scubadive = scubadive.difference(defaultCadGen.moveDHValues(horncutout,dh))
