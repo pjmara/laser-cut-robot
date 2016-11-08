@@ -65,10 +65,10 @@ class Feet implements ICadGenerator, IParameterChanged{
 			
 			defaultCadGen.add(allCad,foot,dh.getListener())
 		}
-		CSG scubadive = new Cube (50,dh.getR(),thickness.getMM()* 4).toCSG().toYMin().toZMin()
+		CSG scubadive = new Cube (50,dh.getR(),thickness.getMM()* 4).toCSG().toYMin()
 
 			scubadive = defaultCadGen.moveDHValues(scubadive,dh)
-			scubadive = scubadive.difference(horncutout)
+			scubadive = scubadive.difference(horncutout).difference(defaultCadGen.moveDHValues(horncutout,dh))
 			defaultCadGen.add(allCad,scubadive,dh.getListener())
 		return allCad;
 	}
