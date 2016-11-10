@@ -41,6 +41,7 @@ class Feet implements ICadGenerator, IParameterChanged{
 		LinkConfiguration conf = d.getLinkConfiguration(linkIndex);
 		HashMap<String, Object> shaftmap = Vitamins.getConfiguration(conf.getShaftType(),conf.getShaftSize())
 		double hornOffset = 	shaftmap.get("hornThickness")	
+		HashMap<String, Object> servoVitaminData = Vitamins.getConfiguration ("hobbyServo", "towerProMG91")
 		
 		// creating the servo
 		CSG servoReference=   Vitamins.get(conf.getElectroMechanicalType(),conf.getElectroMechanicalSize())
@@ -68,7 +69,13 @@ class Feet implements ICadGenerator, IParameterChanged{
 			defaultCadGen.add(allCad,foot,dh.getListener())
 		}
 		CSG scubadive = new Cube (20,dh.getR(),thickness.getMM()* 4).toCSG().toYMin()
-
+		double servoHeight = 	servoVitaminData.get("flangeLongDimention") + 7
+		double servoWidth = servoVitaminData.get("servoThinDimentionThickness") + 7
+		double servoDepth= servoVitaminData.get("servoThickDimentionThickness") + 7
+		CSG connector = new Cube (servoHeight, servoWidth, servoDepth).toCSG().toYMin()
+		connector = connector.difference(servoReference)
+		
+			connector = defaultCadGen.moveDHValues(connector,dh)
 			scubadive = defaultCadGen.moveDHValues(scubadive,dh)
 			scubadive = scubadive.difference(defaultCadGen.moveDHValues(horncutout,dh))
 			defaultCadGen.add(allCad,scubadive,dh.getListener())
