@@ -72,9 +72,12 @@ class Feet implements ICadGenerator, IParameterChanged{
 		double servoHeight = 	servoVitaminData.get("flangeLongDimention") + 7
 		double servoWidth = servoVitaminData.get("servoThinDimentionThickness") + 7
 		double servoDepth= servoVitaminData.get("servoThickDimentionThickness") + 7
-		CSG connector = new Cube (servoHeight, servoWidth, servoDepth).toCSG().toYMin()
+		CSG connector = new Cube (servoHeight, servoWidth, servoDepth).toCSG().toYMin().toZMin()
 		connector = connector.difference(servoReference)
+
+		CSG testCube = new Cube (100,60,50).toCSG()
 		
+			testCube = defaultCadGen.moveDHValues(testCube,dh)
 			connector = defaultCadGen.moveDHValues(connector,dh)
 			scubadive = defaultCadGen.moveDHValues(scubadive,dh)
 			scubadive = scubadive.difference(defaultCadGen.moveDHValues(horncutout,dh))
