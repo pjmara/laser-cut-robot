@@ -69,16 +69,16 @@ class Feet implements ICadGenerator, IParameterChanged{
 			defaultCadGen.add(allCad,foot,dh.getListener())
 		}
 		CSG scubadive = new Cube (20,dh.getR(),thickness.getMM()* 4).toCSG().toYMin()
-		double servoHeight = 	servoVitaminData.get("flangeLongDimention") + 7
-		double servoWidth = servoVitaminData.get("servoThinDimentionThickness") + 7
-		double servoDepth= servoVitaminData.get("servoThickDimentionThickness") + 7
-		CSG connector = new Cube (servoHeight, servoWidth, servoDepth).toCSG().toYMin().toZMin()
+		double servoHeight = 	servoVitaminData.get("flangeLongDimention") * 1.6
+		double servoWidth = servoVitaminData.get("servoThinDimentionThickness") * 1.7
+		double servoDepth= servoVitaminData.get("servoThickDimentionThickness") * 1.6
+		CSG connector = new Cube (servoWidth, servoHeight, servoDepth).toCSG().toYMin().toZMin().movez(-servoWidth * 2).movey(-servoHeight/2)
 		connector = connector.difference(servoReference)
 
-		CSG testCube = new Cube (100,60,50).toCSG()
 		
-			testCube = defaultCadGen.moveDHValues(testCube,dh)
 			connector = defaultCadGen.moveDHValues(connector,dh)
+			defaultCadGen.add(allCad,connector,dh.getListener())
+			
 			scubadive = defaultCadGen.moveDHValues(scubadive,dh)
 			scubadive = scubadive.difference(defaultCadGen.moveDHValues(horncutout,dh))
 			defaultCadGen.add(allCad,scubadive,dh.getListener())
